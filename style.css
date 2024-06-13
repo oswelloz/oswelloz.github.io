@@ -1,21 +1,24 @@
-.container {
-  float: right;
-  width: 60%;
+.header0 {
+  background-color: #555;
+  width: 100%;
 }
-header {
+.header {
   background-color: #db6f04;
   display: block;
-  padding: 1px;
+  padding: 0px;
   text-align: center;
   font-size: large;
   float: left;
   position: fixed;
   width: 30%;
-
+  height: 100%;
+  margin-top: 0%;
 }
+
 .nav-menu {
   margin-left: 0px;
 }
+
 .nav-ul {
   list-style-type: none;
   margin: 0;
@@ -28,6 +31,7 @@ header {
   overflow: auto;
   margin-top:176px;
 }
+
 .active a {
   text-align: center;
   background-color: #04aa6d;
@@ -37,6 +41,7 @@ header {
   padding: 8px 16px;
   text-decoration: none;
 }
+
 .nav-li a {
   text-align: center;
   border-bottom: 1px solid #555;
@@ -45,19 +50,28 @@ header {
   padding: 8px 16px;
   text-decoration: none;
 }
+
 .nav-li a:hover{
 background-color: #555;
 color: white;
 }
+
 .nav-li a:hover:not(.active) {
   background-color: #db6f04;
   color: white;
   width: 100%;
 }
+
 .nav-li:last-child {
   border-bottom: none;
 }
+
 .nav-li a.active {
   background-color: #04aa6d;
 }
 
+.container {
+  float: right;
+  width: 60%;
+  display:flexbox;
+}
