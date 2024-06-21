@@ -1,3 +1,6 @@
+<!-- PHP snippet at the top of index.html -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,6 +17,7 @@
 </header>
 
 <div class="container">
+    
     <div class="nav-menu">
         <nav class="nav">
             <ul class="nav-ul">
@@ -165,15 +169,15 @@
             <h2>Skills</h2>
             <div class="content">
                 <section class="Skills-section">
-                    <img src="img/Adobe_Illustrator_CC_icon.svg.png" class="icon" alt="Adobe Illustrator"> <h4>Illustrator</h4>
-                    <img src="img/Adobe_InDesign_CC_icon.svg.png" class="icon" alt="Adobe InDesign"><h4> InDesign</h4>
-                    <img src="img/Adobe_Photoshop_CC_icon.svg.png" class="icon" alt="Adobe Photoshop"><h4>Photoshop</h4>
-                    <img src="img/CSS-Logo.png" class="icon1" alt="CSS"><h4>CSS</h4>
-                    <img src="img/HTML5_logo_and_wordmark.svg.png" class="icon" alt="HTML5"> <h4>HTML5</h4>
-                    <img src="img/Python-logo-notext.svg.png" class="icon" alt="Python"> <h4>Python</h4>
-                    <img src="img/Mysql_logo.png" class="myicon" alt="MySQL"><h4>MySQL</h4>
-                    <img src="img/Git-Icon-1788C.png" class="icon" alt="Git"> <h4>Git</h4>
-                    <img src="img/QuickBooks-2.png" class="icon" alt="QuickBooks"><h4>QuickBooks</h4>
+                    <img src="img/Adobe_Illustrator_CC_icon.svg.png" class="icon" alt="Adobe Illustrator"><h6>Illustrator</h6>
+                    <img src="img/Adobe_InDesign_CC_icon.svg.png" class="icon" alt="Adobe InDesign"><h6>InDesign</h6>
+                    <img src="img/Adobe_Photoshop_CC_icon.svg.png" class="icon" alt="Adobe Photoshop"><h6>Photoshop</h6>
+                    <img src="img/CSS-Logo.png" class="icon1" alt="CSS"><h6>CSS</h6>
+                    <img src="img/HTML5_logo_and_wordmark.svg.png" class="icon" alt="HTML5"> <h6>HTML5</h6>
+                    <img src="img/Python-logo-notext.svg.png" class="icon" alt="Python"> <h6>Python</h6>
+                    <img src="img/Mysql_logo.png" class="myicon" alt="MySQL"><h6>MySQL</h6>
+                    <img src="img/Git-Icon-1788C.png" class="icon" alt="Git"> <h6>Git</h6>
+                    <img src="img/QuickBooks-2.png" class="icon" alt="QuickBooks"><h6>QuickBooks</h6>
                 </section>
             </div>
         </div>
@@ -245,11 +249,9 @@
     <section id="contact-div" class="section">
         <div class="box">
             <h2>Contact Me</h2>
-            &nbsp;
-            &nbsp;
             <div class="content">
                 <section class="form-section">
-                    <form action="/submit.php" method="post">
+                    <form id="contactForm" action="/submit.php" method="post" target="_blank">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -265,15 +267,20 @@
                         <div class="form-group">
                             <input type="submit" value="Submit">
                         </div>
-                        
                     </form>
-                    <a href="https://www.linkedin.com/in/oswell-ndhlovu-9943b08a/"><img src="img/download.png" width="30px" height="30px" ></a>
+                    <a href="https://www.linkedin.com/in/oswell-ndhlovu-9943b08a/" target="_blank"><img src="img/download.png" width="30px" height="30px"></a>
                     &nbsp;
-               <button> Download My CV</button>
+                
+                <!-- Download CV button -->
+                <a href="Oswell_Ndhlovu_CV.pdf" download target="_blank">
+                    <button>Download My CV</button>
                 </section>
             </div>
         </div>
     </section>
+    
+   
+    
 </div>
 
 <script src="script.js"></script>

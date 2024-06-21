@@ -146,3 +146,26 @@ input[type="submit"]:hover {
   width: 70px;
   height: 40px;
 }
+.Skills-section {
+  display: flex;
+  flex-wrap: wrap; /* Allows icons to wrap to a new line if space is limited */
+  justify-content: flex-start; /* Align items to the left */
+  gap: 20px; /* Adjust spacing between icons */
+}
+
+/* Style for individual icons and text */
+.Skills-section .icon,
+.Skills-section h6 {
+  margin: 0; /* Remove default margins */
+}
+
+/* Adjustments for specific icons */
+.Skills-section .icon {
+  width: 50px; /* Adjust width of icons as needed */
+  height: 50px; /* Adjust height of icons as needed */
+}
+
+.Skills-section .icon1 {
+  width: 50px; /* Adjust width of icons as needed */
+  height: 50px; /* Adjust height of icons as needed */
+}
