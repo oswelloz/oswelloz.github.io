@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Email details
-    $to = "your-email@example.com"; // Replace with your email address
+    $to = "oswell.ndlovu@gmail.com"; // Replace with your email address
     $subject = "New message from CV Contact Form";
     $body = "Name: $name\nEmail: $email\nMessage:\n$message";
     $headers = "From: $email";
