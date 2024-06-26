@@ -251,7 +251,7 @@
             <h2>Contact Me</h2>
             <div class="content">
                 <section class="form-section">
-                    <form id="contactForm" action="/submit.php" method="post" target="_blank">
+                    <form id="contactForm" action="submit.php" method="post">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -275,6 +275,9 @@
                 <a href="Oswell_Ndhlovu_CV.pdf" download target="_blank">
                     <button>Download My CV</button>
                 </section>
+                <?php if (isset($success_message)): ?>
+    <div class="success-message"><?php echo $success_message; ?></div>
+<?php endif; ?>
             </div>
         </div>
     </section>

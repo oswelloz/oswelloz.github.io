@@ -1,37 +1,34 @@
 <?php
-// Check if the form was submitted using POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Collect form data
+    // Assuming you have form validation and processing here
     $name = $_POST['name'];
     $email = $_POST['email'];
     $message = $_POST['message'];
-    
-    // Validate input
-    if (empty($name) || empty($email) || empty($message)) {
-        // Redirect back with error if fields are empty
-        header("Location: /index.html?error=emptyfields");
-        exit();
-    }
-    
-    // Email details
-    $to = "oswell.ndlovu@gmail.com"; // Replace with your email address
-    $subject = "New message from CV Contact Form";
-    $body = "Name: $name\nEmail: $email\nMessage:\n$message";
-    $headers = "From: $email";
-    
-    // Send email
-    if (mail($to, $subject, $body, $headers)) {
-        // Redirect with success message
-        header("Location: /index.html?success=true#contact-div");
-        exit();
+
+    // Example of simple form validation (you should enhance this as needed)
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        // Process the form (send email, save to database, etc.)
+        // Example: send email
+        $to = "your-email@example.com";
+        $subject = "Contact Form Submission";
+        $body = "Name: $name\nEmail: $email\nMessage:\n$message";
+        $headers = "From: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            // Email sent successfully
+            $success_message = "Message sent successfully!";
+        } else {
+            // Error sending email
+            $error_message = "Failed to send message. Please try again.";
+        }
     } else {
-        // Redirect with error message if mail fails
-        header("Location: /index.html?error=mailerror");
-        exit();
+        // Form data not complete
+        $error_message = "Please fill out all fields.";
     }
-} else {
-    // Redirect if accessed without POST method (optional)
-    header("Location: /index.html");
-    exit();
 }
 ?>
+
+<!-- In your HTML, after the form section -->
+<?php if (isset($success_message)): ?>
+    <div class="success-message"><?php echo $success_message; ?></div>
+<?php endif; ?>
