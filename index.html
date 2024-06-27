@@ -1,6 +1,3 @@
-<!-- PHP snippet at the top of index.html -->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Oswell Ndhlovu CV</title>
+    <style>
+        /* Additional inline styles for icons */
+        .icon {
+            width: 40px;
+            height: 40px;
+        }
+        .myicon {
+            width: 90px;
+            height: 50px;
+        }
+        .icon1 {
+            width: 70px;
+            height: 40px;
+        }
+        .Skills-section {
+            display: flex;
+            flex-wrap: wrap; /* Allows icons to wrap to a new line if space is limited */
+            justify-content: flex-start; /* Align items to the left */
+            gap: 20px; /* Adjust spacing between icons */
+        }
+
+        /* Style for individual icons and text */
+        .Skills-section .icon,
+        .Skills-section h6 {
+            margin: 0; /* Remove default margins */
+        }
+
+        /* Adjustments for specific icons */
+        .Skills-section .icon {
+            width: 50px; /* Adjust width of icons as needed */
+            height: 50px; /* Adjust height of icons as needed */
+        }
+    </style>
 </head>
 <body>
 
@@ -175,9 +205,6 @@
                     <img src="img/CSS-Logo.png" class="myicon" alt="CSS"><h6>CSS</h6>
                     <img src="img/HTML5_logo_and_wordmark.svg.png" class="icon" alt="HTML5"> <h6>HTML5</h6>
                     <img src="img/Python-logo-notext.svg.png" class="icon" alt="Python"> <h6>Python</h6>
-                    <img src="img/Mysql_logo.png" class="myicon" alt="MySQL"><h6>MySQL</h6>
-                    <img src="img/Git-Icon-1788C.png" class="icon" alt="Git"> <h6>Git</h6>
-                    <img src="img/QuickBooks-2.png" class="icon" alt="QuickBooks"><h6>QuickBooks</h6>
                 </section>
             </div>
         </div>
@@ -186,72 +213,24 @@
     <section id="achievement-div" class="section">
         <div class="box">
             <h2>Achievements</h2>
-            &nbsp;&nbsp;
+            &nbsp;
             <div class="content">
-                <section class="Achievements-section">
-                    <h3>Work Experience</h3>
-                    &nbsp;
-                    <section class="work-experience">
-                        <h4>Klipspruit West Family Centre</h4>
-                        <ul>
-                            <li>
-                                <strong>Project Manager & Administrator (Jan 2020 – May 2021)</strong>
-                                <ul>
-                                    <li>Successfully managed and coordinated multiple projects aimed at improving community services and facilities.</li>
-                                    <li>Implemented streamlined administrative processes that improved efficiency by 20%.</li>
-                                    <li>Led a team of 10 staff members, fostering a collaborative environment that boosted team morale and productivity.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        &nbsp;
-                        <h4>House 21</h4>
-                        <ul>
-                            <li>
-                                <strong>Graphic Designer & WordPress Manager (Oct 2015 – Dec 2019)</strong>
-                                <ul>
-                                    <li>Designed and launched engaging visual content across digital platforms, increasing user engagement by 30%.</li>
-                                    <li>Managed WordPress websites for multiple clients, ensuring timely updates and functionality improvements.</li>
-                                    <li>Collaborated with marketing teams to create integrated campaigns that enhanced brand visibility and customer retention.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                        &nbsp;
-                        <h4>The Wits Independent</h4>
-                        <ul>
-                            <li>
-                                <strong>Online Editor (Feb 2015 – Oct 2015)</strong>
-                                <ul>
-                                    <li>Transformed the editorial process, implementing digital workflows that reduced production time by 25%.</li>
-                                    <li>Increased online readership by 40% through strategic content planning and SEO optimization.</li>
-                                    <li>Established partnerships with local communities and organizations to broaden the publication's reach and impact.</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
-
-                    <h3>Academics</h3>
-                    &nbsp;&nbsp;
-                    <section class="academics">
-                        <h4>Umuzi Photo Co</h4>
-                        <ul>
-                            <li>
-                                <strong>National Certificate in Information Technology (System Development) (SAQA ID 48872)</strong>
-                                <ul>
-                                    <li>Mar 2024 – Present</li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </section>
+                <section class="achievement-section">
+                    <p>Increased website traffic by 40% through SEO strategies.</p>
+                    <p>Managed a project that improved client satisfaction scores by 25%.</p>
+                    <p>Received 'Employee of the Year' award for exceptional performance.</p>
                 </section>
             </div>
         </div>
     </section>
+
     <section id="contact-div" class="section">
         <div class="box">
             <h2>Contact Me</h2>
             <div class="content">
                 <section class="form-section">
-                    <form id="contactForm" action="/submit.php" method="post" target="_blank">
+                    <!-- Contact Form -->
+                    <form id="contactForm" action="submit.php" method="post">
                         <div class="form-group">
                             <label for="name">Name:</label>
                             <input type="text" id="name" name="name" required>
@@ -262,28 +241,29 @@
                         </div>
                         <div class="form-group">
                             <label for="message">Message:</label>
-                            <textarea id="message" name="message" required></textarea>
+                            <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <div class="form-group">
                             <input type="submit" value="Submit">
                         </div>
                     </form>
-                    <?php if (isset($success_message)): ?>
-                    <div class="success-message"><?php echo $success_message; ?></div>
-                <?php endif; ?>
-                    <a href="https://www.linkedin.com/in/oswell-ndhlovu-9943b08a/" target="_blank"><img src="img/download.png" width="30px" height="30px"></a>
-                    &nbsp;
-                
-                <!-- Download CV button -->
-                <a href="Oswell_Ndhlovu_CV.pdf" download target="_blank">
-                    <button>Download My CV</button>
+                    <!-- End Contact Form -->
+
+                    <!-- PHP success or error message display -->
+                    <?php
+                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                        // Check for success or error messages from submit.php
+                        if (isset($success_message)) {
+                            echo '<div class="success-message">' . $success_message . '</div>';
+                        } elseif (isset($error_message)) {
+                            echo '<div class="error-message">' . $error_message . '</div>';
+                        }
+                    }
+                    ?>
                 </section>
-                
             </div>
         </div>
     </section>
-    
-   
     
 </div>
 
