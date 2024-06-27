@@ -1,44 +1,28 @@
 <?php
-// Error reporting for debugging
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
-// Check if form is submitted via POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $name = trim($_POST['name']);
-    $email = trim($_POST['email']);
-    $message = trim($_POST['message']);
+    // Collect form data
+    $name = htmlspecialchars($_POST['name']);
+    $email = htmlspecialchars($_POST['email']);
+    $message = htmlspecialchars($_POST['message']);
 
-    // Validate form data
-    if (empty($name) || empty($email) || empty($message)) {
-        $error_message = "Please fill out all fields.";
-    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_message = "Invalid email format. Please enter a valid email address.";
-    } else {
-        // Form data is valid, process the form (example: send email)
-        $to = "oswell.ndhlovu@umuzi.org"; // Replace with your email address
-        $subject = "Contact Form Submission from Oswell Ndhlovu CV";
+    // Validate inputs (basic validation)
+    if (!empty($name) && !empty($email) && !empty($message)) {
+        // Set up email variables
+        $to = "your-email@example.com"; // Replace with your email
+        $subject = "New Contact Form Submission";
+        $body = "Name: $name\nEmail: $email\n\n$message";
 
-        $body = "Name: $name\n";
-        $body .= "Email: $email\n";
-        $body .= "Message:\n$message";
-
+        // Headers
         $headers = "From: $email";
 
         // Send email
         if (mail($to, $subject, $body, $headers)) {
-            $success_message = "Message sent successfully!";
+            $success_message = "Thank you! Your message has been sent.";
         } else {
-            $error_message = "Failed to send message. Please try again later.";
+            $error_message = "Oops! Something went wrong. Please try again later.";
         }
+    } else {
+        $error_message = "All fields are required.";
     }
-} else {
-    // If form is not submitted via POST method, redirect or handle as necessary
-    $error_message = "Error: Form submission method not valid.";
 }
-
-// Redirect or display back to the contact form page (index.html)
-header("Location: index.html");
-exit();
 ?>
