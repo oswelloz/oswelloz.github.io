@@ -1,33 +1,20 @@
 <?php
-document.getElementById('contactForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent the form from submitting
+// Example PHP code to handle form submission
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Retrieve POST data
+    $name = $_POST['name'] ?? '';
+    $email = $_POST['email'] ?? '';
+    $message = $_POST['message'] ?? '';
 
-    // Fetch the form data
-    let formData = new FormData(this);
+    // Process the data (example: send email, save to database, etc.)
 
-    // Log form data to check what is being sent
-    console.log('Form Data:', formData);
-
-    // Simulate form submission
-    fetch('/submit.php', {
-        method: 'POST',
-        body: formData
-    })
-    .then(response => {
-        console.log('Response:', response);
-        if (response.ok) {
-            document.getElementById('success-message').innerHTML = "Thank you! Your message has been sent.";
-            document.getElementById('success-message').style.display = 'block';
-            document.getElementById('contactForm').reset(); // Reset the form
-        } else {
-            throw new Error('Network response was not ok.');
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        document.getElementById('success-message').innerHTML = "Oops! Something went wrong. Please try again later.";
-        document.getElementById('success-message').style.display = 'block';
-    });
-});
-
+    // Return a response (JSON format)
+    header('Content-Type: application/json');
+    echo json_encode(['success' => true, 'message' => 'Message received successfully.']);
+    exit;
+} else {
+    header("HTTP/1.1 405 Method Not Allowed");
+    echo "Method Not Allowed";
+    exit;
+}
 ?>
