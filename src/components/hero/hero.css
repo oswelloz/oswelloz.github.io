@@ -1,0 +1,54 @@
+.hero{
+ height: 100%;
+ overflow: hidden;
+ display: flex;   
+}
+
+.hSection{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.hSection.right{
+    align-items: end;
+}
+
+.hTitle{
+    margin-top: 50px;
+    font-size: 100px;
+    color: white;
+}
+
+.hTitle span{
+    color: #220c19;
+}
+
+.awards{
+    width: 30%;
+}
+
+.awards p{
+    font-size: 20px;
+    color: white;
+    margin: 16px 0px;
+}
+
+.awardList{ 
+    display: flex;
+    gap: 8px;
+}
+
+.awardList img{
+    width: 36px;
+    height: 36px;
+    padding: 8px;
+    background-color: white;
+    border-radius: 100%;
+}
+
+.scroll{
+    margin-bottom: 50px;
+    width: max-content;
+}
