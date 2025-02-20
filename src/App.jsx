@@ -6,7 +6,7 @@ import Contact from "./components/contact/Contact";
 const App = () => {
   return (
     <div className="container">
-      <section id ="#home"> <Hero /></section>
+      <section id ="#home"> <starsCanvas/> <Hero /></section>
       <section id ="#services"><Services /></section>
       <section id ="#portfolio"><Portfolio /></section>
       <section id ="#contact"><Contact /></section>

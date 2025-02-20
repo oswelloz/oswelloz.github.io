@@ -11,9 +11,7 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.hSection.right{
-    align-items: end;
-}
+
 
 .hTitle{
     margin-top: 50px;
@@ -51,4 +49,111 @@
 .scroll{
     margin-bottom: 50px;
     width: max-content;
+}
+
+.hSection.right{
+    align-items: end;
+}
+
+.follow{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background-color: #220c19;
+    border-bottom-right-radius: 10px;
+}
+
+.follow img{
+    width: 20px;
+    height: 20px;
+
+}
+.followTextContainer{
+    width: 20px;
+    height: 20px;
+}
+.followText{
+    background-color: rgb(49, 39, 189);
+    font-size: 12px;
+    rotate: 90deg;
+    width: max-content;
+    height: 100%;
+    transform-origin: left top;
+    transform: translateY(-20px);
+    padding: 0 8px;
+    display: flex;
+    align-items: center;
+    border-bottom-right-radius: 10px;
+}
+
+.bubbleContainer{
+    display: flex;
+    gap: 8px;
+    align-items: end;
+    width: 50%;
+    justify-content: space-between;
+}
+
+.bubble{
+    height: 100px;
+    width: 100%;
+    background-color: aliceblue;
+    color: black;
+    padding: 24px;
+    font-size: 18px;
+    border-radius: 20px 20px 0px 20px;
+}
+
+.bubbleContainer img{
+    width: 50px;
+    height: 50px;  
+    border-radius: 100%;  
+    object-fit: cover;
+    background-color: chocolate;
+}
+
+.certificate{
+    width: 60%;
+    display: flex;
+    flex-direction: column ;
+    gap: 8px;
+    align-items: center;
+    text-align: center;
+    line-height: 24px;
+    font-weight: 300;
+    color: white;
+}
+
+.certificate img{
+    width: 70px;
+    height: 70px;
+    
+}
+
+.contactLink{
+    margin-bottom: 58px;
+}
+
+.circleText{
+    letter-spacing: 3px;
+    font-size: 20px;
+}
+
+.contactButton{
+    position: relative;
+}
+
+.arrow{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
